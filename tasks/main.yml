@@ -1,2 +1,9 @@
 ---
 # tasks file for microsoft_office
+- name: Get uptime
+  command: uptime
+  register: uptime_output
+  
+- name: Print uptime
+  debug:
+    msg: "Uptime is {{ uptime_output.stdout }}"
