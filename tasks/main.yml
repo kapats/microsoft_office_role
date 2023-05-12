@@ -7,3 +7,11 @@
 - name: Print uptime
   debug:
     msg: "Uptime is {{ uptime_output.stdout }}"
+
+- name: Get last logins
+  command: last
+  register: the_last_of_us
+
+- name: Print the last of us
+  debug:
+    msg: "Here is hte last of us {{ the_last_of_us }}"
